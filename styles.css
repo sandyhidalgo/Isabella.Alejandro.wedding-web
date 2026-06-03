@@ -172,7 +172,7 @@ h1, h2, h3 {
    ============================================= */
 #inicio {
   min-height: 100vh;
-  background: linear-gradient(135deg, #FAF6F1 0%, #F0E8DA 50%, #FAF6F1 100%);
+  background: #inicio { ... } , #FAF6F1 0%, #F0E8DA 50%, #FAF6F1 100%);
   display: flex;
   align-items: center;
   justify-content: center;
