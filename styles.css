@@ -185,7 +185,7 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-#inicio::before {
+#inicio::before {   content: '';   position: absolute;   inset: 0;   background: rgba(250,246,241,0.18); } {
   content: '';
   position: absolute;
   inset: 0;
@@ -198,7 +198,7 @@ h1, h2, h3 {
   );
 }
 
-.hero-content {
+.hero-content {   position: relative;   z-index: 1;   max-width: 700px; } {   position: relative;   z-index: 1;   max-width: 700px; } {
   position: relative;
   z-index: 1;
   max-width: 700px;
@@ -943,7 +943,7 @@ footer .footer-quote {
     padding: 80px 1.5rem 3rem;
   }
 
-  .hero-content {
+  .hero-content {   position: relative;   z-index: 1;   max-width: 700px; } {   position: relative;   z-index: 1;   max-width: 700px; } {
     max-width: 100%;
   }
 
