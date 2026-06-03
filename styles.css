@@ -172,7 +172,10 @@ h1, h2, h3 {
    ============================================= */
 #inicio {
   min-height: 100vh;
-  background: #inicio { ... } , #FAF6F1 0%, #F0E8DA 50%, #FAF6F1 100%);
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,9 +189,13 @@ h1, h2, h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(201,169,110,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(201,169,110,0.08) 0%, transparent 60%);
+  background: linear-gradient(
+    to right,
+    rgba(250,246,241,0.45) 0%,
+    rgba(250,246,241,0.15) 40%,
+    rgba(250,246,241,0.15) 60%,
+    rgba(250,246,241,0.55) 100%
+  );
 }
 
 .hero-content {
