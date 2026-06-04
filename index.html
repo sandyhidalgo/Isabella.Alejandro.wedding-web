@@ -11,6 +11,13 @@
 </head>
 <body>
 
+  <!-- ===== EFECTO SOBRE QUE SE ABRE ===== -->
+  <div class="envelope-overlay" id="envelopeOverlay">
+    <div class="envelope-flap top"></div>
+    <div class="envelope-flap bottom"></div>
+    <div class="envelope-shine"></div>
+  </div>
+
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <a href="#inicio" class="navbar-brand">Isabella &amp; Alejandro</a>
@@ -423,5 +430,23 @@
   </footer>
 
   <script src="main.js"></script>
+
+  <script>
+    // Efecto de sobre que se abre al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      const envelope = document.getElementById('envelopeOverlay');
+
+      // Espera un poco para que la página esté lista
+      setTimeout(() => {
+        envelope.classList.add('opened');
+
+        // Remover el overlay después de la animación
+        setTimeout(() => {
+          envelope.style.display = 'none';
+          document.body.classList.add('envelope-opened');
+        }, 1600);
+      }, 300);
+    });
+  </script>
 </body>
 </html>

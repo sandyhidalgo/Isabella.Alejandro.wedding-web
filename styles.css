@@ -33,6 +33,122 @@ body {
   color: var(--text-dark);
   font-size: 16px;
   line-height: 1.6;
+  overflow: hidden;
+}
+
+body.envelope-opened {
+  overflow: auto;
+}
+
+/* =============================================
+   EFECTO SOBRE QUE SE ABRE
+   ============================================= */
+@keyframes openEnvelopeTop {
+  0% {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-120deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@keyframes openEnvelopeBottom {
+  0% {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(120deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInShine {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.envelope-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--cream);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.envelope-overlay.opened {
+  pointer-events: none;
+}
+
+.envelope-flap {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(135deg, #FAF6F1 0%, #F0E8DA 100%);
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid rgba(201, 169, 110, 0.3);
+}
+
+.envelope-flap.top {
+  top: 0;
+  border-top: 2px solid #D4B896;
+}
+
+.envelope-flap.bottom {
+  bottom: 0;
+  border-bottom: 2px solid #D4B896;
+}
+
+.envelope-flap::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  background: linear-gradient(to right,
+    rgba(201, 169, 110, 0.3) 0%,
+    rgba(201, 169, 110, 0.1) 50%,
+    transparent 100%);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.envelope-shine {
+  position: absolute;
+  width: 60%;
+  height: 40%;
+  background: linear-gradient(45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%);
+  z-index: 10;
+  pointer-events: none;
+  animation: fadeInShine 2.5s ease-out forwards;
+}
+
+.envelope-overlay.opened .envelope-flap.top {
+  animation: openEnvelopeTop 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.envelope-overlay.opened .envelope-flap.bottom {
+  animation: openEnvelopeBottom 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 /* =============================================
@@ -185,20 +301,14 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-#inicio::before {   content: '';   position: absolute;   inset: 0;   background: rgba(250,246,241,0.18); } {
+#inicio::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(250,246,241,0.45) 0%,
-    rgba(250,246,241,0.15) 40%,
-    rgba(250,246,241,0.15) 60%,
-    rgba(250,246,241,0.55) 100%
-  );
+  background: rgba(250,246,241,0.18);
 }
 
-.hero-content {   position: relative;   z-index: 1;   max-width: 700px; } {   position: relative;   z-index: 1;   max-width: 700px; } {
+.hero-content {
   position: relative;
   z-index: 1;
   max-width: 700px;
@@ -943,7 +1053,7 @@ footer .footer-quote {
     padding: 80px 1.5rem 3rem;
   }
 
-  .hero-content {   position: relative;   z-index: 1;   max-width: 700px; } {   position: relative;   z-index: 1;   max-width: 700px; } {
+  .hero-content {
     max-width: 100%;
   }
 
