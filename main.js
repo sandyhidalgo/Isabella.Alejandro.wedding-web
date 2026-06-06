@@ -3,6 +3,96 @@
    main.js
    ============================================= */
 
+/* ---- INTRO SCREEN: Sobre que se abre al tocar ---- */
+(function initIntroScreen() {
+  const introScreen  = document.getElementById('introScreen');
+  if (!introScreen) return;
+
+  const wrapper    = document.getElementById('envelopeWrapper');
+  const envelope   = document.getElementById('envelope');
+  const letterCard = document.getElementById('letterCard');
+  const introHint  = document.getElementById('introHint');
+  let   isOpening  = false;
+
+  function openEnvelope() {
+    if (isOpening) return;
+    isOpening = true;
+
+    // 1. Ocultar texto de instrucción
+    introHint.classList.add('hidden');
+
+    // 2. Permitir que la carta salga por encima del sobre
+    wrapper.classList.add('open');
+
+    // 3. Flap rota en 3D + sello desaparece
+    envelope.classList.add('opening');
+
+    // 4. La carta sube después de que el flap empieza a abrirse
+    setTimeout(() => {
+      letterCard.classList.add('rising');
+    }, 500);
+
+    // 5. Transición elegante hacia la página principal (~2s después)
+    setTimeout(() => {
+      introScreen.classList.add('dismissing');
+    }, 2400);
+
+    // 6. Eliminar del DOM y desbloquear scroll
+    setTimeout(() => {
+      introScreen.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 3200);
+  }
+
+  // Clic en el sobre o en el texto de instrucción abre la carta
+  envelope.addEventListener('click', openEnvelope);
+  introHint.addEventListener('click', openEnvelope);
+
+  // Bloquear scroll mientras se muestra el intro
+  document.body.style.overflow = 'hidden';
+})();
+
+/* ---- AÑADIR AL CALENDARIO ---- */
+function toggleCalendar(e) {
+  e.stopPropagation();
+  document.getElementById('calendarDropdown').classList.toggle('open');
+}
+
+document.addEventListener('click', () => {
+  const dd = document.getElementById('calendarDropdown');
+  if (dd) dd.classList.remove('open');
+});
+
+function addToCalendar(type) {
+  const title  = 'Boda Isabella & Alejandro';
+  const start  = '20270731T150000Z'; // 17:00 Madrid = 15:00 UTC
+  const end    = '20270731T230000Z';
+  const detail = 'Ceremonia Religiosa 17:00h — Parroquia Hispanoamericana de la Merced, Calle de Édgar Neville 23, Madrid. Recepción 19:30h — Miravalle La Cúpula & Atrio, Guadarrama.';
+  const loc    = 'Parroquia Hispanoamericana de la Merced, Calle de Édgar Neville 23, Tetuán, Madrid';
+
+  if (type === 'google') {
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(detail)}&location=${encodeURIComponent(loc)}`;
+    window.open(url, '_blank');
+  } else {
+    const ics = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Isabella&Alejandro//ES',
+      'BEGIN:VEVENT',
+      `DTSTART:${start}`, `DTEND:${end}`,
+      `SUMMARY:${title}`,
+      `DESCRIPTION:${detail.replace(/,/g, '\\,')}`,
+      `LOCATION:${loc}`,
+      'END:VEVENT', 'END:VCALENDAR'
+    ].join('\r\n');
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'boda-isabella-alejandro.ics';
+    a.click();
+  }
+  const dd = document.getElementById('calendarDropdown');
+  if (dd) dd.classList.remove('open');
+}
+
 // Cambia esta URL por la de tu Google Apps Script Web App
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw39Y_XmOAwpPXYWCPsONQsfwMoHh0wCehbtyynlRn15r7KIoeAoIRHITP1qK-qFEgU/exec';
 
