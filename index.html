@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isabella & Alejandro · 31 Julio 2027</title>
+  <meta name="description" content="Nos casamos el 31 de julio de 2027. Confirma tu asistencia y descubre todos los detalles de nuestra boda." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Favicon corazón -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♥</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== INTRO SCREEN PREMIUM ===== -->
+  <div class="intro-screen" id="introScreen">
+
+    <div class="intro-bg"></div>
+    <div class="intro-glow"></div>
+
+    <!-- Partículas doradas flotantes -->
+    <div class="intro-particles" aria-hidden="true">
+      <span class="p p1"></span><span class="p p2"></span>
+      <span class="p p3"></span><span class="p p4"></span>
+      <span class="p p5"></span><span class="p p6"></span>
+      <span class="p p7"></span><span class="p p8"></span>
+      <span class="p p9"></span><span class="p p10"></span>
+    </div>
+
+    <div class="intro-scene">
+
+      <!-- Stage con perspectiva 3D y flotación -->
+      <div class="env-3d-stage" id="env3dStage">
+
+        <div class="envelope-wrapper" id="envelopeWrapper">
+
+          <!-- Luz interior (visible cuando la solapa abre) -->
+          <div class="env-inner-glow" id="envInnerGlow"></div>
+
+          <!-- La carta con efecto de brillo -->
+          <div class="letter-card" id="letterCard">
+            <div class="letter-shine"></div>
+            <svg class="letter-branch" viewBox="0 0 200 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8,22 Q50,7 100,22 Q150,37 192,18" stroke="#C9A96E" stroke-width="1.1" fill="none"/>
+              <ellipse cx="48" cy="13" rx="7" ry="3" transform="rotate(-14 48 13)" fill="#C9A96E" opacity="0.5"/>
+              <ellipse cx="100" cy="22" rx="6" ry="2.5" fill="#C9A96E" opacity="0.4"/>
+              <ellipse cx="152" cy="29" rx="7" ry="3" transform="rotate(11 152 29)" fill="#C9A96E" opacity="0.5"/>
+            </svg>
+            <p class="letter-blessing">Con la Bendición de Dios<br>y de nuestras Familias</p>
+            <div class="letter-names">
+              Isabella<br>
+              <span class="letter-y">y</span><br>
+              Alejandro
+            </div>
+            <div class="letter-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+            <p class="letter-date">SÁBADO · 31 · JULIO · 2027</p>
+          </div>
+
+          <!-- El sobre -->
+          <div class="envelope" id="envelope">
+
+            <div class="env-interior"></div>
+
+            <!-- Cuerpo con pliegues y líneas de crease -->
+            <div class="env-body">
+              <div class="env-fold env-fold-l"></div>
+              <div class="env-fold env-fold-r"></div>
+              <div class="env-fold env-fold-b"></div>
+              <svg class="env-crease" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0"   y1="0"   x2="50" y2="50" stroke="rgba(0,0,0,0.09)" stroke-width="0.3"/>
+                <line x1="100" y1="0"   x2="50" y2="50" stroke="rgba(0,0,0,0.09)" stroke-width="0.3"/>
+                <line x1="0"   y1="100" x2="50" y2="50" stroke="rgba(0,0,0,0.07)" stroke-width="0.3"/>
+                <line x1="100" y1="100" x2="50" y2="50" stroke="rgba(0,0,0,0.07)" stroke-width="0.3"/>
+              </svg>
+              <!-- Sombra del pliegue de la solapa -->
+              <div class="env-flap-crease"></div>
+            </div>
+
+            <!-- Solapa: dos caras para apertura 3D realista -->
+            <div class="env-flap-wrap" id="envFlapWrap">
+              <div class="env-flap-front">
+                <div class="env-flap-shine"></div>
+              </div>
+              <div class="env-flap-back"></div>
+            </div>
+
+            <!-- Sello de lacre dorado 3D -->
+            <div class="env-seal" id="envSeal">
+              <div class="seal-disk">
+                <svg class="seal-pattern" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(250,246,241,0.30)" stroke-width="1.2" stroke-dasharray="3 2.5"/>
+                  <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(250,246,241,0.18)" stroke-width="0.8"/>
+                  <circle cx="40" cy="7"  r="2.5" fill="rgba(250,246,241,0.30)"/>
+                  <circle cx="40" cy="73" r="2.5" fill="rgba(250,246,241,0.30)"/>
+                  <circle cx="7"  cy="40" r="2.5" fill="rgba(250,246,241,0.30)"/>
+                  <circle cx="73" cy="40" r="2.5" fill="rgba(250,246,241,0.30)"/>
+                  <circle cx="18" cy="18" r="2"   fill="rgba(250,246,241,0.20)"/>
+                  <circle cx="62" cy="18" r="2"   fill="rgba(250,246,241,0.20)"/>
+                  <circle cx="18" cy="62" r="2"   fill="rgba(250,246,241,0.20)"/>
+                  <circle cx="62" cy="62" r="2"   fill="rgba(250,246,241,0.20)"/>
+                </svg>
+                <span class="seal-initials">I &amp; A</span>
+                <span class="seal-date-small">31 · VII · 2027</span>
+              </div>
+            </div>
+
+          </div><!-- end .envelope -->
+        </div><!-- end .envelope-wrapper -->
+      </div><!-- end .env-3d-stage -->
+
+      <!-- Instrucción -->
+      <div class="intro-hint" id="introHint">
+        <svg class="hint-chevron" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="18">
+          <path d="M2 16 L14 2 L26 16" stroke="rgba(201,169,110,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>Toca para abrir tu invitación</p>
+      </div>
+
+    </div><!-- end .intro-scene -->
+  </div><!-- end .intro-screen -->
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <a href="#inicio" class="navbar-brand">Isabella &amp; Alejandro</a>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#informacion">Información</a></li>
+      <li><a href="vestimenta.html">Código de Vestimenta</a></li>
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#" class="btn-nav" onclick="openModal(); return false;">Confirmar Asistencia</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="inicio">
+    <div class="hero-content">
+
+      <!-- Rama decorativa superior -->
+      <svg class="branch-svg" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem">
+        <path d="M10,30 Q50,10 100,30 Q150,50 190,25" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+        <ellipse cx="45" cy="18" rx="8" ry="4" transform="rotate(-20 45 18)" fill="#C9A96E" opacity="0.5"/>
+        <ellipse cx="80" cy="22" rx="7" ry="3" transform="rotate(10 80 22)" fill="#C9A96E" opacity="0.4"/>
+        <ellipse cx="130" cy="36" rx="8" ry="3.5" transform="rotate(-15 130 36)" fill="#C9A96E" opacity="0.5"/>
+        <ellipse cx="160" cy="28" rx="6" ry="3" transform="rotate(25 160 28)" fill="#C9A96E" opacity="0.4"/>
+      </svg>
+
+      <p class="hero-blessing">Con la Bendición de Dios<br>y de nuestras Familias</p>
+
+      <div class="hero-names">
+        Isabella<br>
+        <span class="hero-y">y</span>
+        Alejandro
+      </div>
+
+      <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      <p class="hero-subtitle">Nos Casamos</p>
+
+      <div class="hero-date">
+        <strong>31</strong>
+        SÁBADO · JULIO · 2027
+      </div>
+
+      <p style="font-size:0.85rem;color:var(--text-mid);margin-bottom:2rem;font-family:'Cormorant Garamond',serif;letter-spacing:0.05em;">
+        Dos Mil Veintisiete · Cinco de la Tarde
+      </p>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown">
+        <div class="countdown-block">
+          <span class="countdown-number" id="cd-days">—</span>
+          <span class="countdown-label">Días</span>
+        </div>
+        <div class="countdown-block">
+          <span class="countdown-number" id="cd-hours">—</span>
+          <span class="countdown-label">Horas</span>
+        </div>
+        <div class="countdown-block">
+          <span class="countdown-number" id="cd-min">—</span>
+          <span class="countdown-label">Minutos</span>
+        </div>
+        <div class="countdown-block">
+          <span class="countdown-number" id="cd-sec">—</span>
+          <span class="countdown-label">Segundos</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="openModal()">
+        Confirmar Asistencia &nbsp;♥
+      </button>
+
+      <!-- Añadir al Calendario -->
+      <div class="calendar-wrap" id="calendarWrap">
+        <button class="btn-calendar" onclick="toggleCalendar(event)">
+          <svg viewBox="0 0 20 20" fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="3" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <line x1="6" y1="1" x2="6" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14" y1="1" x2="14" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="8" x2="18" y2="8" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="5.5" y="11" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.6"/>
+            <rect x="11.5" y="11" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.6"/>
+          </svg>
+          Añadir al Calendario
+        </button>
+        <div class="calendar-dropdown" id="calendarDropdown">
+          <button class="calendar-option" onclick="addToCalendar('google')">
+            <svg viewBox="0 0 20 20" fill="none" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="8" stroke="#C9A96E" stroke-width="1.4" fill="none"/>
+              <path d="M10,6 L10,10 L13,12" stroke="#C9A96E" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            </svg>
+            Google Calendar
+          </button>
+          <button class="calendar-option" onclick="addToCalendar('ics')">
+            <svg viewBox="0 0 20 20" fill="none" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="3" width="16" height="15" rx="2" stroke="#C9A96E" stroke-width="1.4" fill="none"/>
+              <line x1="2" y1="8" x2="18" y2="8" stroke="#C9A96E" stroke-width="1.2"/>
+              <path d="M6,13 L10,11 L14,13" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            </svg>
+            Apple / Outlook (.ics)
+          </button>
+        </div>
+      </div>
+
+      <!-- Rama decorativa inferior -->
+      <svg class="branch-svg" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:2rem;transform:scaleY(-1)scaleX(-1)">
+        <path d="M10,30 Q50,10 100,30 Q150,50 190,25" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+        <ellipse cx="45" cy="18" rx="8" ry="4" transform="rotate(-20 45 18)" fill="#C9A96E" opacity="0.5"/>
+        <ellipse cx="80" cy="22" rx="7" ry="3" transform="rotate(10 80 22)" fill="#C9A96E" opacity="0.4"/>
+        <ellipse cx="130" cy="36" rx="8" ry="3.5" transform="rotate(-15 130 36)" fill="#C9A96E" opacity="0.5"/>
+        <ellipse cx="160" cy="28" rx="6" ry="3" transform="rotate(25 160 28)" fill="#C9A96E" opacity="0.4"/>
+      </svg>
+
+    </div>
+  </section>
+
+  <!-- ===== GRID DE SECCIONES ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="icons-grid">
+        <!-- Información -->
+        <a href="#informacion" class="icon-item fade-in">
+          <div class="icon-circle">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+              <line x1="16" y1="3" x2="16" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="9" y1="8" x2="23" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M5,8 L5,28 L27,28 L27,8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+              <path d="M11,28 L11,19 Q16,16 21,19 L21,28" stroke="currentColor" stroke-width="1.6" fill="none"/>
+              <rect x="13" y="11" width="6" height="5" rx="0.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="icon-item-title">Información</div>
+          <div class="icon-item-desc">Ceremonia, celebración, alojamiento y más</div>
+        </a>
+        <!-- Código de Vestimenta -->
+        <a href="vestimenta.html" class="icon-item fade-in">
+          <div class="icon-circle">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16,4 C16,4 12,6 10,8 L7,12 L11,14 L11,28 L21,28 L21,14 L25,12 L22,8 C20,6 16,4 16,4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/>
+              <path d="M13,8 Q16,11 19,8" stroke="currentColor" stroke-width="1.4" fill="none"/>
+            </svg>
+          </div>
+          <div class="icon-item-title">Código de<br>Vestimenta</div>
+          <div class="icon-item-desc">Sugerencias para tu look</div>
+        </a>
+        <!-- Asistencia -->
+        <a href="#asistencia" class="icon-item fade-in" onclick="openModal(); return false;">
+          <div class="icon-circle">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="10" r="4" stroke="currentColor" stroke-width="1.7" fill="none"/>
+              <path d="M4,28 C4,22 8,19 12,19 C16,19 20,22 20,28" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+              <circle cx="22" cy="10" r="3" stroke="currentColor" stroke-width="1.4" fill="none"/>
+              <path d="M20,19 C22,19 28,21 28,28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="icon-item-title">Asistencia</div>
+          <div class="icon-item-desc">Confirma tu asistencia al gran día</div>
+        </a>
+        <!-- Fotos -->
+        <a href="#fotos" class="icon-item fade-in">
+          <div class="icon-circle">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3,10 L3,26 L29,26 L29,10 L22,10 L20,7 L12,7 L10,10 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/>
+              <circle cx="16" cy="18" r="4.5" stroke="currentColor" stroke-width="1.6" fill="none"/>
+              <circle cx="25" cy="13" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="icon-item-title">Fotos</div>
+          <div class="icon-item-desc">Comparte y descubre las fotos de la boda</div>
+        </a>
+        <!-- Contacto -->
+        <a href="mailto:isabellayalejandro2027@gmail.com" class="icon-item fade-in">
+          <div class="icon-circle">
+            <svg viewBox="0 0 32 32" fill="none" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8,6 C5,6 4,8 4,10 C4,18 13,26 22,28 C24,28.5 26,27 27,25 L25,21 C24.5,20 23,19.5 22,20 L19,21 C17,20 15,18 14,16 L15,13 C15.5,12 15,10.5 14,10 L10,8 C9,7 8.5,6 8,6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="icon-item-title">Contacto</div>
+          <div class="icon-item-desc">¿Tienes alguna duda? Escríbenos</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFORMACIÓN ===== -->
+  <section id="informacion" class="section">
+    <div class="container">
+      <div class="divider"><span class="divider-heart">✦</span></div>
+      <h2 class="section-title">Información</h2>
+      <span class="section-title-script">del Gran Día</span>
+      <div class="divider"><span class="divider-heart">♥</span></div>
+      <br>
+
+      <div class="info-cards fade-in">
+
+        <!-- CEREMONIA -->
+        <div class="info-card info-card-ceremony">
+          <span class="info-card-icon">
+            <!-- Cruz / Iglesia -->
+            <svg viewBox="0 0 48 64" fill="none" width="40" height="52" xmlns="http://www.w3.org/2000/svg">
+              <line x1="24" y1="2" x2="24" y2="62" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="10" y1="16" x2="38" y2="16" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div class="info-card-title">Ceremonia Religiosa</div>
+          <div class="info-card-time">17:00 h</div>
+          <div class="info-card-place">Parroquia Hispanoamericana de la Merced</div>
+          <div class="info-card-address">Calle de Édgar Neville 23<br>Tetuán, Madrid</div>
+          <a class="info-card-link" href="https://maps.google.com/?q=Calle+Edgar+Neville+23+Tetuan+Madrid" target="_blank" rel="noopener">Ver en Google Maps →</a>
+        </div>
+
+        <!-- RECEPCIÓN -->
+        <div class="info-card info-card-reception">
+          <span class="info-card-icon">
+            <!-- Edificio / Mansión -->
+            <svg viewBox="0 0 56 52" fill="none" width="48" height="44" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cuerpo principal -->
+              <rect x="8" y="20" width="40" height="30" stroke="#C9A96E" stroke-width="2" fill="none"/>
+              <!-- Tejado / Frontón -->
+              <path d="M4,22 L28,6 L52,22" stroke="#C9A96E" stroke-width="2" stroke-linejoin="round" fill="none"/>
+              <!-- Cúpula central -->
+              <path d="M20,20 Q28,10 36,20" stroke="#C9A96E" stroke-width="1.8" fill="none"/>
+              <line x1="28" y1="10" x2="28" y2="20" stroke="#C9A96E" stroke-width="1.5"/>
+              <!-- Puerta central -->
+              <path d="M22,50 L22,36 Q28,32 34,36 L34,50" stroke="#C9A96E" stroke-width="1.8" fill="none"/>
+              <!-- Ventanas laterales -->
+              <rect x="11" y="26" width="8" height="8" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              <rect x="37" y="26" width="8" height="8" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              <!-- Columnas -->
+              <line x1="18" y1="20" x2="18" y2="50" stroke="#C9A96E" stroke-width="1.2" opacity="0.6"/>
+              <line x1="38" y1="20" x2="38" y2="50" stroke="#C9A96E" stroke-width="1.2" opacity="0.6"/>
+            </svg>
+          </span>
+          <div class="info-card-title">Recepción</div>
+          <div class="info-card-time">19:30 h</div>
+          <div class="info-card-place">Miravalle · La Cúpula &amp; Atrio</div>
+          <div class="info-card-address">Carrera de Coruña, Nº 6, Km. 44<br>Guadarrama, Madrid</div>
+          <a class="info-card-link" href="https://maps.google.com/?q=Carrera+de+Coruna+Km+44+Guadarrama+Madrid" target="_blank" rel="noopener">Ver en Google Maps →</a>
+        </div>
+
+        <!-- SHUTTLE -->
+        <div class="info-card">
+          <span class="info-card-icon">
+            <!-- Autobús -->
+            <svg viewBox="0 0 60 44" fill="none" width="52" height="38" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cuerpo -->
+              <rect x="4" y="8" width="52" height="26" rx="4" stroke="#C9A96E" stroke-width="2" fill="none"/>
+              <!-- Ventanas -->
+              <rect x="10" y="13" width="9" height="7" rx="1" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              <rect x="25" y="13" width="9" height="7" rx="1" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              <rect x="40" y="13" width="9" height="7" rx="1" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              <!-- Línea lateral -->
+              <line x1="4" y1="26" x2="56" y2="26" stroke="#C9A96E" stroke-width="1.2" opacity="0.5"/>
+              <!-- Ruedas -->
+              <circle cx="15" cy="36" r="5" stroke="#C9A96E" stroke-width="2" fill="none"/>
+              <circle cx="45" cy="36" r="5" stroke="#C9A96E" stroke-width="2" fill="none"/>
+              <!-- Puerta -->
+              <line x1="7" y1="8" x2="7" y2="34" stroke="#C9A96E" stroke-width="1.2" opacity="0.5"/>
+              <!-- Parabrisas -->
+              <path d="M4,12 Q4,8 8,8 L4,8Z" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.4"/>
+            </svg>
+          </span>
+          <div class="info-card-title">Shuttle</div>
+          <div class="info-card-time" style="font-size:1.2rem;margin-top:0.5rem">Servicio de Autobús</div>
+          <div class="info-card-address" style="margin-top:0.8rem">Habrá servicio de autobús desde la ceremonia hasta la recepción.<br><br>Se informará del punto de recogida con más detalle próximamente.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOTOS ===== -->
+  <section id="fotos" class="section section-alt">
+    <div class="container" style="text-align:center">
+      <div class="divider"><span class="divider-heart">✦</span></div>
+      <h2 class="section-title">Fotos</h2>
+      <span class="section-title-script">de la Boda</span>
+      <div class="divider"><span class="divider-heart">♥</span></div>
+      <br>
+      <p class="section-subtitle fade-in">Ayúdanos a inmortalizar cada momento</p>
+
+      <div class="photos-actions fade-in" style="margin-top:2rem">
+        <a href="https://photos.app.goo.gl/skYMU7KfEQGDPowf9" target="_blank" rel="noopener" class="btn-primary">
+          Subir Fotos &nbsp;↑
+        </a>
+        <a href="https://photos.app.goo.gl/skYMU7KfEQGDPowf9" target="_blank" rel="noopener" class="btn-outline">
+          Ver Galería
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== MODAL RSVP ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+        <h3>Confirmar Asistencia</h3>
+        <p>Por favor, completa el siguiente formulario</p>
+      </div>
+      <div class="modal-body">
+
+        <!-- Indicador de pasos -->
+        <div class="step-indicator">
+          <div class="step-dot active" id="dot-1"></div>
+          <div class="step-dot" id="dot-2"></div>
+          <div class="step-dot" id="dot-3"></div>
+        </div>
+
+        <!-- PASO 1: Datos personales -->
+        <div class="modal-step active" id="step-1">
+          <div class="divider"><span class="divider-heart">♥</span></div>
+          <p class="step-title">Tus Datos</p>
+
+          <div class="form-group">
+            <label>Nombre y Apellidos *</label>
+            <input type="text" id="nombre" placeholder="Laura Martínez" required />
+          </div>
+          <div class="form-group">
+            <label>Correo Electrónico *</label>
+            <input type="email" id="email" placeholder="laura@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="telefono" placeholder="600 123 456" />
+          </div>
+          <div class="form-group">
+            <label>¿Asistirás a la boda? *</label>
+            <div class="attendance-radios">
+              <label class="radio-option">
+                <input type="radio" name="asiste" value="si" />
+                Sí, asistiré ♥
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="asiste" value="no" />
+                No podré asistir
+              </label>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button class="btn-primary" onclick="goToStep2()" style="width:100%;justify-content:center">
+              Continuar &nbsp;→
+            </button>
+          </div>
+        </div>
+
+        <!-- PASO 2: Acompañantes y alergias -->
+        <div class="modal-step" id="step-2">
+          <div class="divider"><span class="divider-heart">♥</span></div>
+          <p class="step-title">Asistencia</p>
+
+          <div class="form-group">
+            <label>Número de acompañantes</label>
+            <div class="companions-options">
+              <div class="companions-option" onclick="selectCompanions(0)">0</div>
+              <div class="companions-option" onclick="selectCompanions(1)">1</div>
+              <div class="companions-option" onclick="selectCompanions(2)">2</div>
+              <div class="companions-option" onclick="selectCompanions(3)">3</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>¿Tienes alguna alergia o intolerancia?</label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Celiaquía" /> Celiaquía</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Intolerancia a la lactosa" /> Intolerancia a la lactosa</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Frutos secos" /> Frutos secos</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Marisco" /> Marisco</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Vegetariano" /> Vegetariano</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Vegano" /> Vegano</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Embarazada" /> Embarazada</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="Menú infantil" /> Menú infantil</label>
+              <label class="checkbox-option"><input type="checkbox" name="alergia" value="otra-especificar" id="check-otra" onchange="toggleOtraAlergia()" /> Otra (especificar)</label>
+            </div>
+            <textarea id="otra-alergia" placeholder="Otra alergia o intolerancia..." style="display:none;margin-top:0.8rem" rows="2"></textarea>
+          </div>
+
+          <div class="form-footer" style="display:flex;gap:1rem">
+            <button class="btn-outline" onclick="goToStep(1)" style="flex:1;justify-content:center">← Atrás</button>
+            <button class="btn-primary" onclick="goToStep3()" style="flex:2;justify-content:center">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- PASO 3: Comentarios -->
+        <div class="modal-step" id="step-3">
+          <div class="divider"><span class="divider-heart">♥</span></div>
+          <p class="step-title">Comentarios</p>
+
+          <div class="form-group">
+            <label>¿Hay algo más que deberíamos saber?</label>
+            <textarea id="comentarios" placeholder="Escribe tu mensaje aquí..." rows="5"></textarea>
+          </div>
+
+          <div class="form-footer" style="display:flex;gap:1rem">
+            <button class="btn-outline" onclick="goToStep(2)" style="flex:1;justify-content:center">← Atrás</button>
+            <button class="btn-primary" onclick="submitForm()" id="btn-enviar" style="flex:2;justify-content:center">
+              Enviar &nbsp;♥
+            </button>
+          </div>
+        </div>
+
+        <!-- CONFIRMACIÓN -->
+        <div class="modal-step" id="step-confirm">
+          <div class="confirm-message">
+            <div class="confirm-icon">♥</div>
+            <h3>¡Gracias!</h3>
+            <p>Hemos recibido tu respuesta.<br>¡Nos vemos pronto!</p>
+            <br>
+            <svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:150px;margin-top:1rem">
+              <path d="M10,30 Q50,10 100,30 Q150,50 190,25" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+              <ellipse cx="60" cy="18" rx="8" ry="4" transform="rotate(-20 60 18)" fill="#C9A96E" opacity="0.5"/>
+              <ellipse cx="140" cy="38" rx="8" ry="3.5" transform="rotate(-15 140 38)" fill="#C9A96E" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <svg viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:200px;margin-bottom:1.5rem;opacity:0.6">
+      <path d="M10,20 Q75,5 150,20 Q225,35 290,15" stroke="#C9A96E" stroke-width="1" fill="none"/>
+      <ellipse cx="80" cy="10" rx="7" ry="3" transform="rotate(-15 80 10)" fill="#C9A96E" opacity="0.5"/>
+      <ellipse cx="200" cy="30" rx="7" ry="3" transform="rotate(10 200 30)" fill="#C9A96E" opacity="0.5"/>
+    </svg>
+
+    <span class="footer-names">Isabella &amp; Alejandro</span>
+    <div class="footer-date">31 · JULIO · 2027</div>
+    <p class="footer-quote">
+      "El amor no consiste en mirarse el uno al otro,<br>
+      sino en mirar juntos en la misma dirección."
+    </p>
+    <div style="margin-top:1.5rem;font-size:0.7rem;letter-spacing:0.1em;opacity:0.4">
+      ♥ CON AMOR
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
